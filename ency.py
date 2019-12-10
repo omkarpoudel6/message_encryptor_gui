@@ -67,6 +67,20 @@ def decryption():
     lbl3 = Label(dec, text=" ", background="black")
     lbl3.pack(fill=X)
 
+    lbl4 = Label(dec, text=" ", background="black")
+    lbl4.pack(fill=X)
+
+    but1 = Button(dec, text="Browse", background="black", fg="green", font="TkFixedFont")
+    but1.pack()
+
+    lbl5 = Label(dec, text=" ", background="black")
+    lbl5.pack(fill=X)
+
+    ent1 = Entry(dec, textvariable=path, background="black", fg="green", font="TkFixedFont")
+    ent1.pack()
+
+    lbl6 = Label(dec, text=" ", background="black")
+    lbl6.pack(fill=X)
 
 root=Tk()
 root.geometry("600x500")
