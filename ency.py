@@ -29,6 +29,26 @@ def encryption():
     ent1 = Entry(enc, textvariable=path, background="black", fg="red", font="TkFixedFont")
     ent1.pack()
 
+    lbl6 = Label(enc, text=" ", background="black")
+    lbl6.pack(fill=X)
+
+    lbl7 = Label(enc, text="Enter your message below ", background="black", fg="red", font="TkFixedFont")
+    lbl7.pack(fill=X)
+
+    lbl8 = Label(enc, text=" ", background="black")
+    lbl8.pack(fill=X)
+
+    ent2 = Entry(enc, textvariable=message, background="black", fg="red", font="TkFixedFont")
+    ent2.pack(fill=X)
+
+    lbl9 = Label(enc, text=" ", background="black")
+    lbl9.pack(fill=X)
+
+    but2 = Button(enc, text="Encrypt", background="black", font="TkFixedFont", fg="red")
+    but2.pack()
+
+    enc.mainloop()
+
 root=Tk()
 root.geometry("600x500")
 root.config(background="black")
