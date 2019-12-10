@@ -1,5 +1,18 @@
 from tkinter import *
 
+def encryption():
+    enc=Toplevel(root)
+    enc.geometry("400x300")
+    enc.config(background="black")
+
+    path=StringVar()
+    message=StringVar()
+
+    lbl1 = Label(enc, text=" ", background="black")
+    lbl1.pack(fill=X)
+
+    lbl2 = Label(enc, text="Encrypt your Message", background="black", fg="red", font="TkFixedFont")
+    lbl2.pack(fill=X)
 
 root=Tk()
 root.geometry("600x500")
