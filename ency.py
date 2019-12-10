@@ -23,5 +23,22 @@ lbl5.pack(fill=X)
 lbl6=Label(root,text=" ",background="black")
 lbl6.pack(fill=X)
 
+lbl7=Label(root,text=" ",background="black")
+lbl7.pack(fill=X)
+
+lbl8=Label(root,text=" ",background="black")
+lbl8.pack(fill=X)
+
+but1=Button(root,text="Encryption",background="black",fg="white",font="TkFixedFont", command=encryption)
+but1.pack(fill=X)
+
+lbl9=Label(root,text=" ",background="black")
+lbl9.pack(fill=X)
+
+lbl10=Label(root,text=" ",background="black")
+lbl10.pack(fill=X)
+
+but2=Button(root,text="Decryption",background="black",fg="white",font="TkFixedFont", command=decryption)
+but2.pack(fill=X)
 
 root.mainloop()
