@@ -82,6 +82,24 @@ def decryption():
     lbl6 = Label(dec, text=" ", background="black")
     lbl6.pack(fill=X)
 
+    lbl7 = Label(dec, text="Received message below ", background="black", fg="green", font="TkFixedFont")
+    lbl7.pack(fill=X)
+
+    lbl8 = Label(dec, text=" ", background="black")
+    lbl8.pack(fill=X)
+
+    ent2 = Entry(dec, textvariable=message, background="black", fg="green", font="TkFixedFont")
+    ent2.pack(fill=X)
+
+    lbl9 = Label(dec, text=" ", background="black")
+    lbl9.pack(fill=X)
+
+    but2 = Button(dec, text="Decrypt", background="black", font="TkFixedFont", fg="green")
+    but2.pack()
+
+    dec.mainloop()
+
+
 root=Tk()
 root.geometry("600x500")
 root.config(background="black")
