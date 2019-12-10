@@ -14,6 +14,21 @@ def encryption():
     lbl2 = Label(enc, text="Encrypt your Message", background="black", fg="red", font="TkFixedFont")
     lbl2.pack(fill=X)
 
+    lbl3 = Label(enc, text=" ", background="black")
+    lbl3.pack(fill=X)
+
+    lbl4 = Label(enc, text=" ", background="black")
+    lbl4.pack(fill=X)
+
+    but1 = Button(enc, text="Browse", background="black", fg="red", font="TkFixedFont")
+    but1.pack()
+
+    lbl5 = Label(enc, text=" ", background="black")
+    lbl5.pack(fill=X)
+
+    ent1 = Entry(enc, textvariable=path, background="black", fg="red", font="TkFixedFont")
+    ent1.pack()
+
 root=Tk()
 root.geometry("600x500")
 root.config(background="black")
