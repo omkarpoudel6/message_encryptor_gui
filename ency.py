@@ -49,6 +49,25 @@ def encryption():
 
     enc.mainloop()
 
+
+def decryption():
+    dec = Toplevel(root)
+    dec.geometry("400x300")
+    dec.config(background="black")
+
+    path = StringVar()
+    message = StringVar()
+
+    lbl1 = Label(dec, text=" ", background="black")
+    lbl1.pack(fill=X)
+
+    lbl2 = Label(dec, text="Decrypt your Message", background="black", fg="green", font="TkFixedFont")
+    lbl2.pack(fill=X)
+
+    lbl3 = Label(dec, text=" ", background="black")
+    lbl3.pack(fill=X)
+
+
 root=Tk()
 root.geometry("600x500")
 root.config(background="black")
