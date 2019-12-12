@@ -5,18 +5,17 @@ from tkinter import filedialog
 def browse():
     global filename
     # filename=filedialog.askopenfile(initialdir="/r",title="Select File",filetypes=("image files",".jpg"))
-    filename = filedialog.askopenfilename(initialdir="/root/Desktop")
+    filename = filedialog.askopenfilename(initialdir="/root/Desktop",filetypes=(("png files","*.png"),("jpg files","*.jpg"),("jpeg files","*.jpeg")))
     print(filename)
     path = filename
 
-def encryption():
+def encryption(filename):
 
-
-    global filename
     enc=Toplevel(root)
     enc.geometry("400x300")
     enc.config(background="black")
 
+    print(filename)
     path=StringVar()
     message=StringVar()
     path=filename
@@ -30,17 +29,16 @@ def encryption():
     lbl3 = Label(enc, text=" ", background="black")
     lbl3.pack(fill=X)
 
-    lbl4 = Label(enc, text=" ", background="black")
+    lbl4 = Label(enc, text="Image Path", background="black",fg="red",font="TkFixedFont")
     lbl4.pack(fill=X)
 
-    but1 = Button(enc, text="Browse", background="black", fg="red", font="TkFixedFont",command=browse)
-    but1.pack()
 
     lbl5 = Label(enc, text=" ", background="black")
     lbl5.pack(fill=X)
 
-    ent1 = Entry(enc, textvariable=path, background="black", fg="red", font="TkFixedFont")
-    ent1.pack()
+
+    pathlabel=Label(enc,text=filename,background="black",fg="red",font="TkFixedFont")
+    pathlabel.pack(fill=X)
 
     lbl6 = Label(enc, text=" ", background="black")
     lbl6.pack(fill=X)
@@ -117,6 +115,8 @@ root=Tk()
 root.geometry("600x500")
 root.config(background="black")
 
+path=StringVar()
+
 lbl1=Label(root,text=" ",background="black")
 lbl1.pack(fill=X)
 
@@ -129,11 +129,15 @@ lbl3.pack(fill=X)
 lbl4=Label(root,text=" ",background="black")
 lbl4.pack(fill=X)
 
-lbl5=Label(root,text=" ",background="black")
+
+lbl5=Label(root,textvariable=path,background="black",fg="white",font="Monospaced")
 lbl5.pack(fill=X)
 
 lbl6=Label(root,text=" ",background="black")
 lbl6.pack(fill=X)
+
+but0=Button(root,text="Browse Image",background="black",fg="white",font="TkFixedFont",command=browse)
+but0.pack()
 
 lbl7=Label(root,text=" ",background="black")
 lbl7.pack(fill=X)
@@ -141,7 +145,7 @@ lbl7.pack(fill=X)
 lbl8=Label(root,text=" ",background="black")
 lbl8.pack(fill=X)
 
-but1=Button(root,text="Encryption",background="black",fg="white",font="TkFixedFont", command=encryption)
+but1=Button(root,text="Encryption",background="black",fg="white",font="TkFixedFont", command=lambda:encryption(filename))
 but1.pack(fill=X)
 
 lbl9=Label(root,text=" ",background="black")
