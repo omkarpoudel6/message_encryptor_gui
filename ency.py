@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from tkinter import filedialog
 from stegano import lsb
 
@@ -14,12 +15,13 @@ def final_encryption(path,message):
     m=message
     secret_message=lsb.hide(p,m)
     secret_message.save("/root/Desktop/images/encrypted_images/secret_message.png")
+    messagebox.showinfo("Saved","Encryped file stored in /root/Desktop/images/encrypted_images")
 
 
 def encryption(filename):
 
     enc=Toplevel(root)
-    enc.geometry("400x500")
+    enc.geometry("800x400")
     enc.config(background="black")
 
     path=StringVar()
@@ -73,19 +75,21 @@ def encryption(filename):
 
 
 def decryption(filename):
-
+    dec_message = lsb.reveal(filename)
+    decmessage = dec_message
     dec = Toplevel(root)
 
-    dec.geometry("400x300")
+    dec.geometry("800x300")
     dec.config(background="black")
 
     path = StringVar()
     message = StringVar()
+    message=decmessage
 
     lbl1 = Label(dec, text=" ", background="black")
     lbl1.pack(fill=X)
 
-    lbl2 = Label(dec, text="Decrypt your Message", background="black", fg="green", font="TkFixedFont")
+    lbl2 = Label(dec, text="Your Message", background="black", fg="green", font="TkFixedFont")
     lbl2.pack(fill=X)
 
     lbl3 = Label(dec, text=" ", background="black")
@@ -106,20 +110,16 @@ def decryption(filename):
     lbl6 = Label(dec, text=" ", background="black")
     lbl6.pack(fill=X)
 
-    lbl7 = Label(dec, text="Received message below ", background="black", fg="green", font="TkFixedFont")
+    lbl7 = Label(dec, text="Extracted message from image", background="black", fg="green", font="TkFixedFont")
     lbl7.pack(fill=X)
 
     lbl8 = Label(dec, text=" ", background="black")
     lbl8.pack(fill=X)
 
-    ent2 = Entry(dec, textvariable=message, background="black", fg="green", font="TkFixedFont")
-    ent2.pack(fill=X)
 
-    lbl9 = Label(dec, text=" ", background="black")
+    lbl9 = Label(dec, text=message, background="black",fg="white")
     lbl9.pack(fill=X)
 
-    but2 = Button(dec, text="Decrypt", background="black", font="TkFixedFont", fg="green")
-    but2.pack()
 
     dec.mainloop()
 
