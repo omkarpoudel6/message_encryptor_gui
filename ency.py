@@ -1,12 +1,25 @@
 from tkinter import *
+from tkinter import filedialog
+
+
+def browse():
+    global filename
+    # filename=filedialog.askopenfile(initialdir="/r",title="Select File",filetypes=("image files",".jpg"))
+    filename = filedialog.askopenfilename(initialdir="/root/Desktop")
+    print(filename)
+    path = filename
 
 def encryption():
+
+
+    global filename
     enc=Toplevel(root)
     enc.geometry("400x300")
     enc.config(background="black")
 
     path=StringVar()
     message=StringVar()
+    path=filename
 
     lbl1 = Label(enc, text=" ", background="black")
     lbl1.pack(fill=X)
@@ -20,7 +33,7 @@ def encryption():
     lbl4 = Label(enc, text=" ", background="black")
     lbl4.pack(fill=X)
 
-    but1 = Button(enc, text="Browse", background="black", fg="red", font="TkFixedFont")
+    but1 = Button(enc, text="Browse", background="black", fg="red", font="TkFixedFont",command=browse)
     but1.pack()
 
     lbl5 = Label(enc, text=" ", background="black")
