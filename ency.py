@@ -1,23 +1,29 @@
 from tkinter import *
 from tkinter import filedialog
+from stegano import lsb
 
 
 def browse():
     global filename
     # filename=filedialog.askopenfile(initialdir="/r",title="Select File",filetypes=("image files",".jpg"))
     filename = filedialog.askopenfilename(initialdir="/root/Desktop",filetypes=(("png files","*.png"),("jpg files","*.jpg"),("jpeg files","*.jpeg")))
-    print(filename)
     path = filename
+
+def final_encryption(path,message):
+    p=path
+    m=message
+    secret_message=lsb.hide(p,m)
+    secret_message.save("/root/Desktop/images/encrypted_images/secret_message.png")
 
 def encryption(filename):
 
     enc=Toplevel(root)
-    enc.geometry("400x300")
+    enc.geometry("400x500")
     enc.config(background="black")
 
-    print(filename)
     path=StringVar()
     message=StringVar()
+    f_name=StringVar()
     path=filename
 
     lbl1 = Label(enc, text=" ", background="black")
@@ -55,7 +61,16 @@ def encryption(filename):
     lbl9 = Label(enc, text=" ", background="black")
     lbl9.pack(fill=X)
 
-    but2 = Button(enc, text="Encrypt", background="black", font="TkFixedFont", fg="red")
+
+
+    lbl11 = Label(enc, text=" ", background="black")
+    lbl11.pack(fill=X)
+
+
+    lbl12 = Label(enc, text=" ", background="black")
+    lbl12.pack(fill=X)
+
+    but2 = Button(enc, text="Encrypt", background="black", font="TkFixedFont", fg="red",command=lambda:final_encryption(filename,message.get()))
     but2.pack()
 
     enc.mainloop()
