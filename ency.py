@@ -5,10 +5,13 @@ from stegano import lsb
 
 
 def browse():
-    global filename
-    # filename=filedialog.askopenfile(initialdir="/r",title="Select File",filetypes=("image files",".jpg"))
-    filename = filedialog.askopenfilename(initialdir="/root/Desktop",filetypes=(("png files","*.png"),("jpg files","*.jpg"),("jpeg files","*.jpeg")))
-    path = filename
+    try:
+        global filename
+        # filename=filedialog.askopenfile(initialdir="/r",title="Select File",filetypes=("image files",".jpg"))
+        filename = filedialog.askopenfilename(initialdir="/root/Desktop",filetypes=(("png files","*.png"),("jpg files","*.jpg"),("jpeg files","*.jpeg")))
+        path = filename
+    except:
+        print("something went wrong")
 
 def final_encryption(path,message):
     p=path
@@ -37,6 +40,7 @@ def encryption(filename):
 
     lbl3 = Label(enc, text=" ", background="black")
     lbl3.pack(fill=X)
+
 
     lbl4 = Label(enc, text="Image Path", background="black",fg="red",font="TkFixedFont")
     lbl4.pack(fill=X)
