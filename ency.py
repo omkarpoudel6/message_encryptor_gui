@@ -15,6 +15,7 @@ def final_encryption(path,message):
     secret_message=lsb.hide(p,m)
     secret_message.save("/root/Desktop/images/encrypted_images/secret_message.png")
 
+
 def encryption(filename):
 
     enc=Toplevel(root)
@@ -38,10 +39,8 @@ def encryption(filename):
     lbl4 = Label(enc, text="Image Path", background="black",fg="red",font="TkFixedFont")
     lbl4.pack(fill=X)
 
-
     lbl5 = Label(enc, text=" ", background="black")
     lbl5.pack(fill=X)
-
 
     pathlabel=Label(enc,text=filename,background="black",fg="red",font="TkFixedFont")
     pathlabel.pack(fill=X)
@@ -61,11 +60,8 @@ def encryption(filename):
     lbl9 = Label(enc, text=" ", background="black")
     lbl9.pack(fill=X)
 
-
-
     lbl11 = Label(enc, text=" ", background="black")
     lbl11.pack(fill=X)
-
 
     lbl12 = Label(enc, text=" ", background="black")
     lbl12.pack(fill=X)
@@ -77,7 +73,9 @@ def encryption(filename):
 
 
 def decryption(filename):
+
     dec = Toplevel(root)
+
     dec.geometry("400x300")
     dec.config(background="black")
 
@@ -102,8 +100,6 @@ def decryption(filename):
     lbl5 = Label(dec, text=" ", background="black")
     lbl5.pack(fill=X)
 
-    '''ent1 = Entry(dec, textvariable=path, background="black", fg="green", font="TkFixedFont")
-    ent1.pack()'''
     pathlbl=Label(dec,text=filename,background="black",fg="green",font="TkFixedFont")
     pathlbl.pack(fill=X)
 
@@ -173,5 +169,4 @@ lbl10.pack(fill=X)
 
 but2=Button(root,text="Decryption",background="black",fg="white",font="TkFixedFont", command=lambda:decryption(filename))
 but2.pack(fill=X)
-
 root.mainloop()
