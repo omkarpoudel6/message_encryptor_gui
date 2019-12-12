@@ -61,7 +61,7 @@ def encryption(filename):
     enc.mainloop()
 
 
-def decryption():
+def decryption(filename):
     dec = Toplevel(root)
     dec.geometry("400x300")
     dec.config(background="black")
@@ -81,14 +81,16 @@ def decryption():
     lbl4 = Label(dec, text=" ", background="black")
     lbl4.pack(fill=X)
 
-    but1 = Button(dec, text="Browse", background="black", fg="green", font="TkFixedFont")
-    but1.pack()
+    pathdec=Label(dec,text="Image path",background="black",fg="green",font="TkFixedFont")
+    pathdec.pack(fill=X)
 
     lbl5 = Label(dec, text=" ", background="black")
     lbl5.pack(fill=X)
 
-    ent1 = Entry(dec, textvariable=path, background="black", fg="green", font="TkFixedFont")
-    ent1.pack()
+    '''ent1 = Entry(dec, textvariable=path, background="black", fg="green", font="TkFixedFont")
+    ent1.pack()'''
+    pathlbl=Label(dec,text=filename,background="black",fg="green",font="TkFixedFont")
+    pathlbl.pack(fill=X)
 
     lbl6 = Label(dec, text=" ", background="black")
     lbl6.pack(fill=X)
@@ -154,7 +156,7 @@ lbl9.pack(fill=X)
 lbl10=Label(root,text=" ",background="black")
 lbl10.pack(fill=X)
 
-but2=Button(root,text="Decryption",background="black",fg="white",font="TkFixedFont", command=decryption)
+but2=Button(root,text="Decryption",background="black",fg="white",font="TkFixedFont", command=lambda:decryption(filename))
 but2.pack(fill=X)
 
 root.mainloop()
