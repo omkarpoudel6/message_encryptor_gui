@@ -3,7 +3,6 @@ from tkinter import messagebox
 from tkinter import filedialog
 from stegano import lsb
 
-
 def browse():
     try:
         global filename
@@ -120,12 +119,11 @@ def decryption(filename):
     lbl8 = Label(dec, text=" ", background="black")
     lbl8.pack(fill=X)
 
-
     lbl9 = Label(dec, text=message, background="black",fg="white")
     lbl9.pack(fill=X)
 
-
     dec.mainloop()
+
 
 
 root=Tk()
@@ -173,4 +171,5 @@ lbl10.pack(fill=X)
 
 but2=Button(root,text="Decryption",background="black",fg="white",font="TkFixedFont", command=lambda:decryption(filename))
 but2.pack(fill=X)
+
 root.mainloop()
